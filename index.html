@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Kelas | TI 2026</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-light: rgba(226, 232, 240, 0.8);
+  
+  /* Vibrant Theme Palette */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: #e0e7ff;
+  --secondary: #06b6d4;
+  --pink: #ec4899;
+  --amber: #f59e0b;
+  --emerald: #10b981;
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --grad-hero: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  --grad-accent: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+  --grad-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --grad-rose: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  --grad-card-bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --grad-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  
+  --radius: 18px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 20px 30px -10px rgba(99, 102, 241, 0.2), 0 10px 15px -5px rgba(15, 23, 42, 0.05);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient Colorful Background Glows */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(60px);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 600px;
+  right: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(139, 92, 246, 0.06) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+a { color: inherit; }
+button, input { font: inherit; }
+.container { width: min(1180px, 92%); margin: auto; }
+
+/* ==================================================
+   HEADER & NAVBAR
+   ================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--grad-primary);
+  color: white;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+.brand-text {
+  background: var(--grad-primary);
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.menu-toggle:hover {
+  background: var(--surface-alt);
+}
+
+/* ==================================================
+   HERO SECTION
+   ================================================== */
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: white;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+  margin-bottom: 16px;
+}
+
+.eyebrow-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 10px 0 18px;
+  color: var(--text);
+}
+
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-copy {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+.hero-meta-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.meta-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e0e7ff, #ede9fe);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+}
+
+.meta-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.meta-text span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Modern Colorful Stats Grid */
+.stats-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.12), 0 0 0 1px rgba(99, 102, 241, 0.08);
+}
+
+.stats-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 14px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.stat-card.total {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border: 1px solid #ddd6fe;
+}
+.stat-card.male {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+}
+.stat-card.female {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  border: 1px solid #fbcfe8;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+}
+
+.stat-card.total .stat-icon { background: #8b5cf6; color: white; }
+.stat-card.male .stat-icon { background: #0284c7; color: white; }
+.stat-card.female .stat-icon { background: #db2777; color: white; }
+
+.stat-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.stat-card strong {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.stat-card.total strong { color: #6d28d9; }
+.stat-card.male strong { color: #0369a1; }
+.stat-card.female strong { color: #be185d; }
+
+/* ==================================================
+   SECTION COMMON
+   ================================================== */
+.section {
+  padding: 85px 0;
+  position: relative;
+}
+
+.section-eyebrow {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.section-intro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 34px;
+}
+
+/* ==================================================
+   PENGURUS SECTION
+   ================================================== */
+.leaders-section {
+  background: linear-gradient(180deg, rgba(238, 242, 255, 0.45) 0%, rgba(245, 243, 255, 0.75) 100%);
+  border-block: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.leader-card {
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeIn 0.45s ease both;
+}
+
+.leader-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.leader-card.ketua::before {
+  background: var(--grad-gold);
+}
+
+.leader-card.wakil::before {
+  background: var(--grad-accent);
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.leader-photo {
+  width: 104px;
+  height: 104px;
+  margin: 0;
+  border-radius: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 3px solid white;
+}
+
+.leader-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.role-badge.ketua {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.role-badge.wakil {
+  background: #cffafe;
+  color: #0e7490;
+  border: 1px solid #a5f3fc;
+}
+
+.leader-info h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  margin: 4px 0 6px;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.leader-info .nim {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* ==================================================
+   DAFTAR MAHASISWA & FILTERS
+   ================================================== */
+.directory-header {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.directory-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Gender Filter Buttons */
+.filter-tabs {
+  display: inline-flex;
+  gap: 6px;
+  background: white;
+  padding: 5px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  background: var(--surface-alt);
+}
+
+.filter-btn.active {
+  background: var(--grad-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+/* Search Box */
+.search-wrap {
+  position: relative;
+  width: min(100%, 360px);
+}
+
+.search-icon-svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  font-size: 0.94rem;
+  color: var(--text);
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.results-line {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+/* Student Cards Grid */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: var(--grad-card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 18px 18px;
+  text-align: center;
+  cursor: pointer;
+  min-width: 0;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease both;
+  overflow: hidden;
+}
+
+.student-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--grad-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.student-card:hover::before {
+  opacity: 1;
+}
+
+/* Avatars with Colorful Gradients */
+.avatar {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: white;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 3px solid white;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.student-card .nim {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+/* Instagram Link with vibrant hover */
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--surface-alt);
+  transition: all 0.25s ease;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.instagram-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.student-card:hover .instagram-link,
+.leader-card:hover .instagram-link,
+.instagram-link:hover {
+  background: #fdf2f8;
+  color: #dc2743;
+}
+
+.card-hint {
+  display: block;
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  opacity: 0.8;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.student-card:hover .card-hint {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 45px 20px;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  background: white;
+}
+
+/* ==================================================
+   PROFILE DETAIL MODAL / DIALOG
+   ================================================== */
+.profile-dialog {
+  width: min(440px, calc(100% - 32px));
+  max-width: 440px;
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  color: var(--text);
+  background: white;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
+  overflow: hidden;
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.profile-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.profile-cover {
+  height: 120px;
+  background: var(--grad-primary);
+  position: relative;
+}
+
+.profile-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 60%);
+}
+
+.profile-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+  z-index: 2;
+}
+
+.profile-close:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  transform: rotate(90deg);
+}
+
+.profile-content {
+  padding: 0 28px 28px;
+}
+
+.profile-avatar {
+  width: 106px;
+  height: 106px;
+  margin-top: -53px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.profile-avatar .avatar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 2rem;
+  border: none;
+}
+
+.profile-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  margin: 14px 0 8px;
+  color: var(--text);
+}
+
+.profile-role-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 30px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.profile-details {
+  margin: 22px 0;
+  border-top: 1px solid var(--border);
+}
+
+.profile-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-detail dt {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.profile-detail dd {
+  margin: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  flex: 1;
+}
+
+.profile-button.instagram {
+  background: var(--grad-instagram);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.35);
+}
+
+.profile-button.instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 39, 67, 0.45);
+}
+
+.profile-button.secondary {
+  background: var(--surface-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.profile-button.secondary:hover {
+  background: #e2e8f0;
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: white;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--grad-primary);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer p { margin: 0; font-size: 0.92rem; }
+.footer-note { color: #94a3b8; }
+
+/* Focus styles */
+button:focus-visible, a:focus-visible, .student-card:focus-visible, input:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+   ================================================== */
+@media (max-width: 1024px) {
+  .student-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 50px 0 40px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+  .section { padding: 60px 0; }
+
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    padding: 18px 5%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  }
+
+  .nav-links.is-open { display: flex; }
+  .nav-links a { width: 100%; padding: 12px 16px; }
+
+  .leaders-grid { grid-template-columns: 1fr; }
+  .directory-controls { flex-direction: column; align-items: stretch; }
+  .filter-tabs { width: 100%; justify-content: center; }
+  .search-wrap { width: 100%; }
+  .student-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .student-grid { grid-template-columns: 1fr; }
+  .leader-card { flex-direction: column; text-align: center; align-items: center; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .profile-content { padding-inline: 20px; }
+  .profile-actions { flex-direction: column; }
+  .profile-button.secondary { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header / Navigation -->
+<header class="site-header">
+  <nav class="navbar container" aria-label="Navigasi utama">
+    <a class="brand" href="#beranda" id="navClassName">
+      <span class="brand-badge">TI</span>
+      <span class="brand-text">TI 2026</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle"
+      aria-expanded="false" aria-controls="navLinks" type="button">☰ Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#beranda">Beranda</a>
+      <a href="#pengurus">Pengurus</a>
+      <a href="#mahasiswa">Mahasiswa</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero" id="beranda">
+    <div class="container hero-layout">
+      <div>
+        <div class="eyebrow-pill">
+          <span class="dot"></span>
+          <span>Profil Kelas D · <span id="heroYear">Angkatan 2026</span></span>
+        </div>
+        <h1>Selamat Datang di Web Profil Kelas Kami<br><span class="gradient-text" id="heroClassName">ANGKATAN 2026</span></h1>
+        <p class="hero-copy">
+          Satu kelas, sejuta cerita, dan tujuan masa depan yang sama.
+          Mari bertumbuh, berinovasi, dan mengukir karya bersama di dunia teknologi.
+        </p>
+        
+        <div class="hero-meta-card">
+          <div class="meta-icon">🎓</div>
+          <div class="meta-text">
+            <strong id="programName">Program Studi Teknik Informatika</strong>
+            <span id="campusName">UNIVERSITAS DIPA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Panel -->
+      <aside class="stats-panel">
+        <div class="stats-title">Statistik Kelas</div>
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-info">
+              <div class="stat-icon">👥</div>
+              <span class="stat-label">Total Mahasiswa</span>
+            </div>
+            <strong id="totalCount">0</strong>
+          </div>
+          <div class="stat-card male">
+            <div class="stat-info">
+              <div class="stat-icon">👦</div>
+              <span class="stat-label">Laki-laki</span>
+            </div>
+            <strong id="maleCount">0</strong>
+          </div>
+          <div class="stat-card female">
+            <div class="stat-info">
+              <div class="stat-icon">👧</div>
+              <span class="stat-label">Perempuan</span>
+            </div>
+            <strong id="femaleCount">0</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Struktur Pengurus -->
+  <section class="section leaders-section" id="pengurus">
+    <div class="container">
+      <div class="section-eyebrow">Kepemimpinan</div>
+      <h2 class="section-heading">Pengurus Kelas</h2>
+      <p class="section-intro">Rekan kami yang dipercaya untuk mengoordinasikan serta memajukan kebersamaan kelas.</p>
+      <div class="leaders-grid" id="leadersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Direktori Mahasiswa -->
+  <section class="section" id="mahasiswa">
+    <div class="container">
+      <div class="directory-header">
+        <div>
+          <div class="section-eyebrow">Keluarga Besar</div>
+          <h2 class="section-heading">Daftar Mahasiswa</h2>
+          <p class="section-intro">Jelajahi profil lengkap setiap rekan seperjuangan di kelas kami.</p>
+        </div>
+
+        <div class="directory-controls">
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Filter jenis kelamin">
+            <button class="filter-btn active" data-filter="semua" type="button">✨ Semua</button>
+            <button class="filter-btn" data-filter="L" type="button">👦 Laki-laki</button>
+            <button class="filter-btn" data-filter="P" type="button">👧 Perempuan</button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="search-wrap">
+            <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input class="search-input" id="searchInput" type="search"
+              placeholder="Cari nama atau NIM..." autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <p class="results-line" id="resultsLine" aria-live="polite"></p>
+      <div class="student-grid" id="studentGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- Jendela Profil Detail (Modal) -->
+<dialog class="profile-dialog" id="profileDialog" aria-labelledby="profileName">
+  <div class="profile-cover"></div>
+  <button class="profile-close" id="closeProfile" type="button" aria-label="Tutup profil">×</button>
+
+  <div class="profile-content">
+    <div class="profile-avatar" id="profileAvatar"></div>
+    <div class="section-eyebrow" style="margin-top: 10px;">Detail Mahasiswa</div>
+    <h2 class="profile-name" id="profileName">Nama Mahasiswa</h2>
+    <span class="profile-role-badge" id="profileRole">Anggota Kelas</span>
+
+    <dl class="profile-details">
+      <div class="profile-detail">
+        <dt>Nomor Induk Mahasiswa</dt>
+        <dd id="profileNim">—</dd>
+      </div>
+      <div class="profile-detail">
+        <dt>Instagram</dt>
+        <dd id="profileInstagram">—</dd>
+      </div>
+    </dl>
+
+    <div class="profile-actions">
+      <a class="profile-button instagram" id="profileInstagramLink"
+        href="#" target="_blank" rel="noopener noreferrer">
+        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        Kunjungi Instagram
+      </a>
+      <button class="profile-button secondary" id="closeProfileSecondary" type="button">
+        Tutup
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-inner">
+    <p><strong id="footerClassName">TI 2026</strong> · <span id="footerYear">2026</span></p>
+    <p class="footer-note">Tumbuh, berkreasi, dan saling menginspirasi bersama.</p>
+  </div>
+</footer>
+
+<script>
+/* ==================================================
+   1. IDENTITAS KELAS
+   ================================================== */
+const namaKelas = "TI 2026";
+const namaProdi = "Program Studi Teknik Informatika";
+const namaKampus = "UNIVERSITAS DIPA";
+const tahunAngkatan = 2026;
+
+/* ==================================================
+   2. DATA MAHASISWA
+   peran: ketua, wakil, anggota
+   jenisKelamin: L atau P
+   foto: URL foto atau "" untuk inisial otomatis dengan warna gradien
+   ================================================== */
+const mahasiswa = [
+  {nama:"Cantika",nim:"2601001",instagram:"cntiiikaa_",foto:"",peran:"ketua",jenisKelamin:"P"},
+  {nama:"M.Fajar A.K",nim:"262127",instagram:"jarrpaaa",foto:"fajar.jpeg",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Dafa",nim:"2601003",instagram:"dfaaaajaaa",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Faiz",nim:"2601004",instagram:"kurozoken.site",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Dama",nim:"2601005",instagram:"dm_4ditya",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Arfah",nim:"2601006",instagram:"fahh_1912",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Jaelani",nim:"2601007",instagram:"jawa",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Fahruz",nim:"2601008",instagram:"faahrus",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Zaky",nim:"2601009",instagram:"zaky_rhmn",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Fahri",nim:"2601010",instagram:"18alghifari_",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Delsri",nim:"2601011",instagram:"dlssrii_22",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Nova",nim:"2601012",instagram:"annovha7",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"christian tandi",nim:"2601013",instagram:"cristiantandi14",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Rafi",nim:"2601014",instagram:"rafialtss",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"riny",nim:"2601015",instagram:"riny4128",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Florine",nim:"2601016",instagram:"oin.matandung",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Khasyael",nim:"2601017",instagram:"khasyaelshirazy_",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Rich Norman",nim:"2601018",instagram:"richnrmn.ayal",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Jade",nim:"2601019",instagram:"__12jadekafiar",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Baim",nim:"2601020",instagram:"_baaim06",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Fikri",nim:"2601021",instagram:"fkriiibhsyra",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"Rizky",nim:"2601022",instagram:"rizkymlidya",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Alfrida",nim:"2601023",instagram:"alfrida_kado30",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Ahmad Alfian",nim:"2601024",instagram:"ahmad_alfian_nace",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"julio",nim:"2601030",instagram:"julio",foto:"",peran:"wakil",jenisKelamin:"L"}
+];
+
+/* Palet Warna Gradien untuk Inisial Avatar */
+const GRADIENT_PALETTES = [
+  "linear-gradient(135deg, #6366f1, #8b5cf6)", // Indigo - Violet
+  "linear-gradient(135deg, #3b82f6, #06b6d4)", // Blue - Cyan
+  "linear-gradient(135deg, #ec4899, #f43f5e)", // Pink - Rose
+  "linear-gradient(135deg, #10b981, #059669)", // Emerald
+  "linear-gradient(135deg, #f59e0b, #ea580c)", // Amber - Orange
+  "linear-gradient(135deg, #8b5cf6, #d946ef)", // Purple - Fuchsia
+  "linear-gradient(135deg, #0284c7, #2563eb)", // Sky - Blue
+  "linear-gradient(135deg, #14b8a6, #0d9488)", // Teal
+  "linear-gradient(135deg, #f43f5e, #fb7185)", // Coral Rose
+  "linear-gradient(135deg, #6d28d9, #4f46e5)"  // Deep Purple
+];
+
+function dapatkanGradienNama(nama) {
+  let hash = 0;
+  for (let i = 0; i < nama.length; i++) {
+    hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const index = Math.abs(hash) % GRADIENT_PALETTES.length;
+  return GRADIENT_PALETTES[index];
+}
+
+/* SVG Instagram */
+const instagramSvg = `
+<svg class="instagram-icon" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round"
+ stroke-linejoin="round" aria-hidden="true">
+ <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+ <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+ <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>`;
+
+/* Inisial nama */
+function inisial(nama) {
+  return nama.trim().split(/\s+/).slice(0, 2)
+    .map(kata => kata[0]).join("").toUpperCase();
+}
+
+/* Foto atau placeholder avatar berwarna */
+function buatFoto(person, className = "avatar") {
+  const avatar = document.createElement("div");
+  avatar.className = `${className} avatar`;
+
+  if (person.foto && person.foto.trim() !== "") {
+    const img = document.createElement("img");
+    img.src = person.foto;
+    img.alt = `Foto ${person.nama}`;
+    img.loading = "lazy";
+
+    img.onerror = () => {
+      avatar.replaceChildren();
+      avatar.style.background = dapatkanGradienNama(person.nama);
+      avatar.textContent = inisial(person.nama);
+    };
+
+    avatar.appendChild(img);
+  } else {
+    avatar.style.background = dapatkanGradienNama(person.nama);
+    avatar.textContent = inisial(person.nama);
+    avatar.setAttribute("role", "img");
+    avatar.setAttribute("aria-label", `Inisial ${person.nama}`);
+  }
+
+  return avatar;
+}
+
+/* Link Instagram */
+function buatLinkInstagram(username) {
+  const link = document.createElement("a");
+  link.className = "instagram-link";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.href = username
+    ? `https://instagram.com/${encodeURIComponent(username)}`
+    : "#";
+  link.innerHTML = `${instagramSvg}<span>@${username || "instagram"}</span>`;
+
+  if (!username) {
+    link.addEventListener("click", event => event.preventDefault());
+  }
+
+  return link;
+}
+
+/* Kartu Pengurus */
+function buatKartuPengurus(person, jabatan, tipe) {
+  const card = document.createElement("article");
+  card.className = `leader-card ${tipe}`;
+
+  card.appendChild(buatFoto(person, "leader-photo"));
+
+  const info = document.createElement("div");
+  info.className = "leader-info";
+
+  const label = document.createElement("span");
+  label.className = `role-badge ${tipe}`;
+  label.innerHTML = tipe === "ketua" ? "👑 " + jabatan : "⭐ " + jabatan;
+
+  const nama = document.createElement("h3");
+  nama.textContent = person.nama;
+
+  const nim = document.createElement("p");
+  nim.className = "nim";
+  nim.textContent = `NIM: ${person.nim}`;
+
+  info.append(label, nama, nim, buatLinkInstagram(person.instagram));
+  card.appendChild(info);
+
+  return card;
+}
+
+/* Render Pengurus */
+function renderPengurus() {
+  const grid = document.getElementById("leadersGrid");
+  grid.replaceChildren();
+
+  const ketua = mahasiswa.find(m => m.peran === "ketua");
+  const wakil = mahasiswa.find(m => m.peran === "wakil");
+
+  if (ketua) grid.appendChild(buatKartuPengurus(ketua, "Ketua Kelas", "ketua"));
+  if (wakil) grid.appendChild(buatKartuPengurus(wakil, "Wakil Ketua Kelas", "wakil"));
+
+  if (!ketua && !wakil) {
+    grid.textContent = "Data pengurus belum tersedia.";
+  }
+}
+
+/* Variabel Status Filter */
+let activeGenderFilter = "semua";
+let currentSearchKeyword = "";
+
+/* Render Mahasiswa dengan Filter & Search */
+function renderMahasiswa() {
+  const grid = document.getElementById("studentGrid");
+  grid.replaceChildren();
+
+  const keyword = currentSearchKeyword.trim().toLowerCase();
+
+  const hasil = mahasiswa
+    .filter(m => {
+      // Filter Gender
+      const matchGender = (activeGenderFilter === "semua") || (m.jenisKelamin === activeGenderFilter);
+      // Filter Search
+      const matchSearch = `${m.nama} ${m.nim}`.toLowerCase().includes(keyword);
+      return matchGender && matchSearch;
+    })
+    .sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+
+  document.getElementById("resultsLine").textContent =
+    `Menampilkan ${hasil.length} dari ${mahasiswa.length} mahasiswa`;
+
+  if (hasil.length === 0) {
+    const kosong = document.createElement("div");
+    kosong.className = "empty-state";
+    kosong.innerHTML = `🔍 <strong>Tidak ada mahasiswa yang cocok</strong><br><span style="font-size:0.9rem; margin-top:6px; display:inline-block;">Coba ganti kata kunci pencarian atau filter yang dipilih.</span>`;
+    grid.appendChild(kosong);
+    return;
+  }
+
+  hasil.forEach((person, index) => {
+    const card = document.createElement("article");
+    card.className = "student-card";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", `Lihat profil ${person.nama}`);
+    card.style.animationDelay = `${Math.min(index * 25, 250)}ms`;
+
+    card.appendChild(buatFoto(person));
+
+    const nama = document.createElement("h3");
+    nama.textContent = person.nama;
+
+    const nim = document.createElement("p");
+    nim.className = "nim";
+    nim.textContent = `NIM: ${person.nim}`;
+
+    const ig = document.createElement("span");
+    ig.className = "instagram-link";
+    ig.innerHTML = `${instagramSvg}<span>@${person.instagram || "—"}</span>`;
+
+    const hint = document.createElement("span");
+    hint.className = "card-hint";
+    hint.textContent = "Ketuk untuk detail ✨";
+
+    card.append(nama, nim, ig, hint);
+
+    card.addEventListener("click", () => bukaProfil(person));
+    card.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        bukaProfil(person);
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+/* Modal Profil */
+const profileDialog = document.getElementById("profileDialog");
+
+function bukaProfil(person) {
+  document.getElementById("profileName").textContent = person.nama;
+  document.getElementById("profileNim").textContent = person.nim;
+  document.getElementById("profileInstagram").textContent =
+    person.instagram ? `@${person.instagram}` : "Belum tersedia";
+
+  const jabatan = {
+    ketua: "👑 Ketua Kelas",
+    wakil: "⭐ Wakil Ketua Kelas",
+    anggota: "Anggota Kelas"
+  };
+
+  document.getElementById("profileRole").textContent =
+    jabatan[person.peran] || "Mahasiswa";
+
+  const avatarHolder = document.getElementById("profileAvatar");
+  avatarHolder.replaceChildren(buatFoto(person));
+
+  const link = document.getElementById("profileInstagramLink");
+
+  if (person.instagram) {
+    link.href = `https://instagram.com/${encodeURIComponent(person.instagram)}`;
+    link.style.display = "inline-flex";
+  } else {
+    link.href = "#";
+    link.style.display = "none";
+  }
+
+  profileDialog.showModal();
+}
+
+function tutupProfil() {
+  if (profileDialog.open) profileDialog.close();
+}
+
+document.getElementById("closeProfile").addEventListener("click", tutupProfil);
+document.getElementById("closeProfileSecondary").addEventListener("click", tutupProfil);
+
+profileDialog.addEventListener("click", event => {
+  if (event.target === profileDialog) tutupProfil();
+});
+
+/* Statistik */
+function renderStatistik() {
+  document.getElementById("totalCount").textContent = mahasiswa.length;
+  document.getElementById("maleCount").textContent =
+    mahasiswa.filter(m => m.jenisKelamin === "L").length;
+  document.getElementById("femaleCount").textContent =
+    mahasiswa.filter(m => m.jenisKelamin === "P").length;
+}
+
+/* Identitas */
+function renderIdentitas() {
+  document.title = `Profil Kelas | ${namaKelas}`;
+  const brandText = document.querySelector(".brand-text");
+  if (brandText) brandText.textContent = namaKelas;
+  
+  document.getElementById("heroClassName").textContent = namaKelas;
+  document.getElementById("heroYear").textContent = `Angkatan ${tahunAngkatan}`;
+  document.getElementById("programName").textContent = namaProdi;
+  document.getElementById("campusName").textContent = namaKampus;
+  document.getElementById("footerClassName").textContent = namaKelas;
+  document.getElementById("footerYear").textContent = tahunAngkatan;
+}
+
+/* Event Filter Buttons */
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeGenderFilter = btn.dataset.filter;
+    renderMahasiswa();
+  });
+});
+
+/* Pencarian */
+document.getElementById("searchInput").addEventListener("input", event => {
+  currentSearchKeyword = event.target.value;
+  renderMahasiswa();
+});
+
+/* Menu Hamburger Mobile */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const terbuka = navLinks.classList.toggle("is-open");
+  menuToggle.setAttribute("aria-expanded", String(terbuka));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+/* Inisialisasi awal */
+renderIdentitas();
+renderStatistik();
+renderPengurus();
+renderMahasiswa();
+</script>
+
+</body>
+</html>
