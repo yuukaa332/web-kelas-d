@@ -624,10 +624,10 @@ h1 {
   margin: 0 0 20px;
 }
 
-/* Student Cards Grid */
+/* Student Cards Grid (Responsive & Spacious) */
 .student-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -635,7 +635,7 @@ h1 {
   background: var(--grad-card-bg);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  padding: 24px 18px 18px;
+  padding: 24px 18px 20px;
   text-align: center;
   cursor: pointer;
   min-width: 0;
@@ -675,8 +675,8 @@ h1 {
 
 /* Avatars with Colorful Gradients */
 .avatar {
-  width: 86px;
-  height: 86px;
+  width: 90px;
+  height: 90px;
   flex-shrink: 0;
   margin: 0 auto 14px;
   border-radius: 50%;
@@ -684,7 +684,7 @@ h1 {
   place-items: center;
   overflow: hidden;
   color: white;
-  font-size: 1.55rem;
+  font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
@@ -699,7 +699,7 @@ h1 {
 
 .student-card h3 {
   margin: 0 0 4px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
   overflow-wrap: anywhere;
@@ -708,7 +708,7 @@ h1 {
 
 .student-card .nim {
   color: var(--text-muted);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   margin: 0 0 12px;
   font-weight: 500;
 }
@@ -721,13 +721,13 @@ h1 {
   gap: 7px;
   color: #cbd5e1;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.06);
   transition: all 0.25s ease;
-  max-width: 90%;
+  max-width: 95%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -751,18 +751,18 @@ h1 {
 .card-detail-btn {
   margin-top: 14px;
   width: 100%;
-  padding: 8px 14px;
+  padding: 9px 14px;
   border-radius: 12px;
-  background: rgba(129, 140, 248, 0.12);
-  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: rgba(129, 140, 248, 0.14);
+  border: 1px solid rgba(129, 140, 248, 0.35);
   color: #c7d2fe;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   transition: all 0.25s ease;
 }
 
@@ -774,11 +774,11 @@ h1 {
   box-shadow: 0 4px 14px rgba(129, 140, 248, 0.4);
 }
 
-/* Tombol Muat Lebih Banyak (Load More / Lihat Selengkapnya di Handphone) */
+/* Tombol Muat Lebih Banyak (Load More / Lihat Selengkapnya) */
 .load-more-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 36px;
   animation: fadeIn 0.35s ease both;
 }
 
@@ -786,18 +786,18 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 13px 26px;
+  gap: 12px;
+  padding: 14px 32px;
   border-radius: 30px;
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  border: 1.5px solid rgba(129, 140, 248, 0.35);
+  border: 1.5px solid rgba(129, 140, 248, 0.45);
   color: #f8fafc;
-  font-size: 0.94rem;
+  font-size: 0.98rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.25);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  width: min(100%, 360px);
+  width: min(100%, 380px);
 }
 
 .load-more-btn:hover {
@@ -805,7 +805,7 @@ h1 {
   background: var(--grad-primary);
   color: #090d16;
   border-color: transparent;
-  box-shadow: 0 14px 28px -4px rgba(129, 140, 248, 0.45);
+  box-shadow: 0 14px 28px -4px rgba(129, 140, 248, 0.5);
 }
 
 .empty-state {
@@ -820,18 +820,19 @@ h1 {
 }
 
 /* ==================================================
-   PROFILE DETAIL MODAL / DIALOG (DARK)
+   PROFILE DETAIL MODAL / DIALOG (LEGA & LEBAR)
    ================================================== */
 .profile-dialog {
-  width: min(440px, calc(100% - 32px));
-  max-width: 440px;
+  width: min(520px, calc(100% - 32px));
+  max-width: 520px;
   max-height: 90vh;
+  margin: auto;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 26px;
   color: var(--text);
   background: #0f172a;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.85);
   overflow-y: auto;
   overflow-x: hidden;
   animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -849,7 +850,7 @@ h1 {
 }
 
 .profile-cover {
-  height: 120px;
+  height: 130px;
   background: var(--grad-primary);
   position: relative;
 }
@@ -858,22 +859,22 @@ h1 {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 60%);
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 60%);
 }
 
 .profile-close {
   position: absolute;
   top: 14px;
   right: 14px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
   display: grid;
@@ -883,22 +884,22 @@ h1 {
 }
 
 .profile-close:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: #0f172a;
   transform: rotate(90deg);
 }
 
 .profile-content {
-  padding: 0 28px 28px;
+  padding: 0 32px 32px;
 }
 
 .profile-avatar {
-  width: 106px;
-  height: 106px;
-  margin-top: -53px;
+  width: 112px;
+  height: 112px;
+  margin-top: -56px;
   border-radius: 50%;
   border: 5px solid #0f172a;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   position: relative;
   z-index: 2;
   background: #0f172a;
@@ -908,33 +909,33 @@ h1 {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.2rem;
   border: none;
 }
 
 .profile-name {
   font-family: "Playfair Display", serif;
   font-weight: 800;
-  font-size: 1.85rem;
+  font-size: 2rem;
   line-height: 1.2;
   overflow-wrap: anywhere;
-  margin: 14px 0 8px;
+  margin: 16px 0 8px;
   color: var(--text);
 }
 
 .profile-role-badge {
   display: inline-block;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 30px;
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(99, 102, 241, 0.22);
   color: #c7d2fe;
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
 
 .profile-details {
-  margin: 22px 0;
+  margin: 24px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -942,13 +943,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 0;
+  padding: 15px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .profile-detail dt {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .profile-detail dd {
@@ -956,12 +957,14 @@ h1 {
   text-align: right;
   overflow-wrap: anywhere;
   font-weight: 700;
+  font-size: 0.95rem;
   color: var(--text);
 }
 
 .profile-actions {
   display: flex;
   gap: 12px;
+  margin-top: 8px;
 }
 
 .profile-button {
@@ -969,10 +972,10 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  padding: 12px 18px;
-  border-radius: 12px;
+  padding: 13px 20px;
+  border-radius: 14px;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
   border: none;
@@ -994,7 +997,7 @@ h1 {
 .profile-button.secondary {
   background: #1e293b;
   color: #f8fafc;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   flex: 0 0 auto;
 }
 
@@ -1048,10 +1051,6 @@ button:focus-visible, a:focus-visible, .student-card:focus-visible, input:focus-
 /* ==================================================
    RESPONSIVE DESIGN (MOBILE / HANDPHONE)
    ================================================== */
-@media (max-width: 1024px) {
-  .student-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
 @media (max-width: 768px) {
   .hero { padding: 50px 0 40px; }
   .hero-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -1080,16 +1079,13 @@ button:focus-visible, a:focus-visible, .student-card:focus-visible, input:focus-
   .directory-controls { flex-direction: column; align-items: stretch; }
   .filter-tabs { width: 100%; justify-content: center; }
   .search-wrap { width: 100%; }
-  
-  /* Di HP tampil 2 kolom atau 1 kolom dengan tombol jelas */
-  .student-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  
-  .student-card { padding: 20px 14px 14px; }
-  .card-detail-btn { font-size: 0.78rem; padding: 7px 10px; }
 }
 
-@media (max-width: 480px) {
-  .student-grid { grid-template-columns: 1fr; }
+@media (max-width: 540px) {
+  /* Di HP layar kecil kartu dibuat 1 kolom penuh agar teks & tombol lega dan tidak kecil */
+  .student-grid { grid-template-columns: 1fr; gap: 16px; }
+  .student-card { padding: 22px 18px 18px; }
+  .card-detail-btn { font-size: 0.88rem; padding: 10px 14px; }
   .leader-card { flex-direction: column; text-align: center; align-items: center; }
   .footer-inner { flex-direction: column; text-align: center; }
   .profile-content { padding-inline: 20px; }
@@ -1226,7 +1222,7 @@ button:focus-visible, a:focus-visible, .student-card:focus-visible, input:focus-
       <!-- Grid Mahasiswa -->
       <div class="student-grid" id="studentGrid"></div>
       
-      <!-- Wadah Tombol Lihat Selengkapnya (Handphone) -->
+      <!-- Wadah Tombol Lihat Selengkapnya -->
       <div class="load-more-wrap" id="loadMoreWrap"></div>
     </div>
   </section>
@@ -1302,8 +1298,8 @@ const mahasiswa = [
   {nama:"Ardiansyah Malik",nim:"2601007",instagram:"ardiansyah.contoh",foto:"",peran:"anggota",jenisKelamin:"L"},
   {nama:"Aulia Nabila",nim:"2601008",instagram:"aulia.contoh",foto:"",peran:"anggota",jenisKelamin:"P"},
   {nama:"Bagas Saputra",nim:"2601009",instagram:"bagas.contoh",foto:"",peran:"anggota",jenisKelamin:"L"},
-  {nama:"Citra Lestari",nim:"2601010",instagram:"citra.contoh",foto:"",peran:"anggota",jenisKelamin:"P"},
-  {nama:"Daffa Maulana",nim:"2601011",instagram:"daffa.contoh",foto:"",peran:"anggota",jenisKelamin:"L"},
+  {nama:"faiz",nim:"2601010",instagram:"citra.contoh",foto:"",peran:"anggota",jenisKelamin:"P"},
+  {nama:"Dafa",nim:"2601011",instagram:"daffa.contoh",foto:"",peran:"anggota",jenisKelamin:"L"},
   {nama:"Dewi Anggraini",nim:"2601012",instagram:"dewi.contoh",foto:"",peran:"anggota",jenisKelamin:"P"},
   {nama:"Fajar Nugraha",nim:"2601013",instagram:"fajar.contoh",foto:"",peran:"anggota",jenisKelamin:"L"},
   {nama:"Farah Azzahra",nim:"2601014",instagram:"farah.contoh",foto:"",peran:"anggota",jenisKelamin:"P"},
@@ -1453,17 +1449,17 @@ function renderPengurus() {
   }
 }
 
-/* Variabel Status Filter & Pagination Handphone */
+/* Status Filter & Pagination Universal (Desktop & HP) */
 let activeGenderFilter = "semua";
 let currentSearchKeyword = "";
-let isMobileExpanded = false;
-const MOBILE_PAGE_LIMIT = 6; // Jumlah kartu awal di layar handphone
+let isExpanded = false;
 
-function isMobileDevice() {
-  return window.innerWidth <= 768;
+function dapatkanBatasTampilan() {
+  // 6 di HP (< 768px), 8 di Laptop/Desktop
+  return window.innerWidth <= 768 ? 6 : 8;
 }
 
-/* Render Mahasiswa dengan Filter, Search & Dukungan Handphone */
+/* Render Mahasiswa */
 function renderMahasiswa() {
   const grid = document.getElementById("studentGrid");
   const loadMoreWrap = document.getElementById("loadMoreWrap");
@@ -1481,9 +1477,9 @@ function renderMahasiswa() {
     })
     .sort((a, b) => a.nama.localeCompare(b.nama, "id"));
 
-  const isMobile = isMobileDevice();
-  const shouldLimit = isMobile && !isFilteringOrSearching && !isMobileExpanded && (hasil.length > MOBILE_PAGE_LIMIT);
-  const dataYangDitampilkan = shouldLimit ? hasil.slice(0, MOBILE_PAGE_LIMIT) : hasil;
+  const batas = dapatkanBatasTampilan();
+  const shouldLimit = !isFilteringOrSearching && !isExpanded && (hasil.length > batas);
+  const dataYangDitampilkan = shouldLimit ? hasil.slice(0, batas) : hasil;
 
   document.getElementById("resultsLine").textContent = shouldLimit
     ? `Menampilkan ${dataYangDitampilkan.length} dari ${mahasiswa.length} mahasiswa`
@@ -1538,24 +1534,24 @@ function renderMahasiswa() {
     grid.appendChild(card);
   });
 
-  /* Logika Tombol "Lihat Selengkapnya" di Handphone */
-  if (isMobile && !isFilteringOrSearching && hasil.length > MOBILE_PAGE_LIMIT) {
+  /* Logika Tombol "Lihat Selengkapnya" (Aktif di Laptop & HP) */
+  if (!isFilteringOrSearching && hasil.length > batas) {
     loadMoreWrap.style.display = "flex";
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "load-more-btn";
 
-    if (!isMobileExpanded) {
-      const sisa = hasil.length - MOBILE_PAGE_LIMIT;
+    if (!isExpanded) {
+      const sisa = hasil.length - batas;
       btn.innerHTML = `<span>Lihat Selengkapnya (${sisa} Mahasiswa)</span> <span>↓</span>`;
       btn.addEventListener("click", () => {
-        isMobileExpanded = true;
+        isExpanded = true;
         renderMahasiswa();
       });
     } else {
       btn.innerHTML = `<span>Tampilkan Lebih Sedikit</span> <span>↑</span>`;
       btn.addEventListener("click", () => {
-        isMobileExpanded = false;
+        isExpanded = false;
         renderMahasiswa();
         document.getElementById("mahasiswa").scrollIntoView({ behavior: "smooth" });
       });
@@ -1640,7 +1636,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     activeGenderFilter = btn.dataset.filter;
-    isMobileExpanded = false;
+    isExpanded = false;
     renderMahasiswa();
   });
 });
@@ -1648,7 +1644,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 /* Pencarian */
 document.getElementById("searchInput").addEventListener("input", event => {
   currentSearchKeyword = event.target.value;
-  isMobileExpanded = false;
+  isExpanded = false;
   renderMahasiswa();
 });
 
@@ -1668,7 +1664,7 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-/* Deteksi Perubahan Ukuran Layar */
+/* Deteksi Ukuran Layar */
 window.addEventListener("resize", () => {
   renderMahasiswa();
 });
